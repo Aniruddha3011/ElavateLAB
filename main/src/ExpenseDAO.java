@@ -14,10 +14,10 @@ public class ExpenseDAO {
             ps.setString(4, date);
 
             int rows = ps.executeUpdate();
-            System.out.println("✅ Inserted rows: " + rows);
+            System.out.println("Inserted rows: " + rows);
 
         } catch (Exception e) {
-            System.out.println("❌ Insert failed.");
+            System.out.println("Insert failed.");
             e.printStackTrace();
         }
     }
@@ -37,9 +37,9 @@ public class ExpenseDAO {
                         rs.getString("date")
                 ));
             }
-            System.out.println("✅ Loaded " + list.size() + " expenses from DB.");
+            System.out.println("Loaded " + list.size() + " expenses from DB.");
         } catch (Exception e) {
-            System.out.println("❌ Query failed.");
+            System.out.println("Query failed.");
             e.printStackTrace();
         }
         return list;

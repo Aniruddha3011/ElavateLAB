@@ -12,17 +12,17 @@ public class Database {
             Class.forName("org.sqlite.JDBC"); // force load driver
             Connection conn = DriverManager.getConnection(DB_URL);
 
-            // ✅ Print the absolute path of the DB file
+            //path of the DB file
            File dbFile = new File("A:/coding/java/ExpenseTracker/main/expenses.db");
-System.out.println("✅ Using DB file: " + dbFile.getAbsolutePath());
+System.out.println("Using DB file: " + dbFile.getAbsolutePath());
 
 
-            // ✅ Make sure changes are committed immediately
+          
             conn.setAutoCommit(true);
 
             return conn;
         } catch (Exception e) {
-            System.out.println("❌ Database connection failed.");
+            System.out.println("atabase connection failed.");
             e.printStackTrace();
             return null;
         }
@@ -36,9 +36,9 @@ System.out.println("✅ Using DB file: " + dbFile.getAbsolutePath());
                          "amount REAL," +
                          "category TEXT," +
                          "date TEXT)");
-            System.out.println("✅ Table ready.");
+            System.out.println("Table ready.");
         } catch (Exception e) {
-            System.out.println("❌ Table creation failed.");
+            System.out.println("Table creation failed.");
             e.printStackTrace();
         }
     }

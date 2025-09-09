@@ -20,7 +20,7 @@ public class ExpenseApp extends Application {
         TextField amountField = new TextField();
         amountField.setPromptText("Amount");
 
-        // ✅ Dropdown for Category
+        //Dropdown list
         ComboBox<String> categoryBox = new ComboBox<>();
         categoryBox.getItems().addAll(
                 "Food",
@@ -33,11 +33,11 @@ public class ExpenseApp extends Application {
         );
         categoryBox.setPromptText("Select Category");
 
-        // ✅ Date Picker for Date
+        // Date Picker
         DatePicker datePicker = new DatePicker();
         datePicker.setPromptText("Pick a Date");
 
-        // Add Expense Button
+        //Add Expense Button
         Button addBtn = new Button("Add Expense");
         addBtn.setOnAction(e -> {
             try {
@@ -62,7 +62,7 @@ public class ExpenseApp extends Application {
                 ExpenseDAO.addExpense(name, amount, category, date);
                 refresh();
 
-                // Clear input fields after adding
+                // Clear input fields
                 nameField.clear();
                 amountField.clear();
                 categoryBox.setValue(null);
@@ -74,11 +74,11 @@ public class ExpenseApp extends Application {
             }
         });
 
-        // Show Chart Button
+        // Display Chart Button
         Button chartBtn = new Button("Show Chart");
         chartBtn.setOnAction(e -> ChartView.showChart());
 
-        // Output area to display expenses
+       
         output = new TextArea();
         output.setEditable(false);
         refresh();
@@ -95,7 +95,7 @@ public class ExpenseApp extends Application {
         stage.show();
     }
 
-    // Method to refresh the output area with current expenses
+   
     private void refresh() {
         output.clear();
         var list = ExpenseDAO.getAllExpenses();
@@ -105,7 +105,7 @@ public class ExpenseApp extends Application {
         System.out.println("Loaded " + list.size() + " expenses.");
     }
 
-    // Show an alert dialog with a given title and message
+   
     private void showAlert(String title, String msg) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
@@ -114,7 +114,7 @@ public class ExpenseApp extends Application {
         alert.showAndWait();
     }
 
-    // Main method to launch the JavaFX application
+    
     public static void main(String[] args) {
         launch(args);
     }

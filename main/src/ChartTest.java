@@ -9,13 +9,13 @@ import javax.swing.*;
 
 public class ChartTest {
     public static void main(String[] args) {
-        // Create dataset
+        //dataset
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         dataset.addValue(5, "Expenses", "Jan");
         dataset.addValue(8, "Expenses", "Feb");
         dataset.addValue(6, "Expenses", "Mar");
 
-        // Create chart
+        //chart
         JFreeChart chart = ChartFactory.createLineChart(
                 "Monthly Expenses",
                 "Month",
@@ -23,7 +23,7 @@ public class ChartTest {
                 dataset
         );
 
-        // Display chart in JFrame
+        //chart in JFrame
         JFrame frame = new JFrame("JFreeChart Test");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(new ChartPanel(chart));
